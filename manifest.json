@@ -1,0 +1,12 @@
+{
+  "name": "PadDIY ESP32",
+  "version": "25343",
+  "build": "2025-12-10",
+  "chipFamily": "ESP32",
+  "parts": [
+    {
+      "path": "bin/firmware_ESP32S3_25343.bin",
+      "offset": 0
+    }
+  ]
+}
