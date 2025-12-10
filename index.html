@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PadDIY ESP32 Firmware Update</title>
+  <script type="module" src="https://unpkg.com/esp-web-tools@latest/dist/web/install-button.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      text-align: center;
+    }
+    h1 {
+      color: #0073aa;
+    }
+    esp-web-install-button {
+      --esp-web-button-background: #0073aa;
+      --esp-web-button-color: #fff;
+      --esp-web-button-border-radius: 6px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>PadDIY ESP32 Firmware Update</h1>
+  <p>Klik op de knop hieronder om je PadDIY ESP32 te updaten naar de nieuwste firmware.</p>
+
+  <esp-web-install-button
+    manifest="https://doostveen.github.io/PaddiyFW/manifest.json">
+  </esp-web-install-button>
+
+  <p style="margin-top:30px; font-size:0.9em; color:#555;">
+    Gebruik Chrome of Edge en sluit je ESP32 via USB aan.
+  </p>
+</body>
+</html>
