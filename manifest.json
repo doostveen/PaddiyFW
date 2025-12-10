@@ -1,7 +1,7 @@
 {
   "name": "PadDIY ESP32-S3",
   "version": "1.0.0",
-  "chipFamily": "ESP32-S3",
+  "chipFamily": "ESP32",
   "flashSize": "16MB",
   "parts": [
     { "path": "firmware/bootloader.bin", "offset": 0 },
