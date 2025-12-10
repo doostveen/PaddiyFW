@@ -1,12 +1,15 @@
 {
-  "name": "PadDIY ESP32-S3",
-  "version": "1.0.0",
-  "chipFamily": "ESP32",
-  "flashSize": "16MB",
-  "parts": [
-    { "path": "firmware/bootloader.bin", "offset": 0 },
-    { "path": "firmware/partitions.bin", "offset": 32768 },
-    { "path": "firmware/otadata.bin", "offset": 57344 },
-    { "path": "firmware/firmware_ESP32S3_25343.bin", "offset": 65536 }
+  "name": "PadDIY",
+  "version": "25343",
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        { "path": "firmware/bootloader.bin", "offset": 0 },
+        { "path": "firmware/partitions.bin", "offset": 32768 },
+        { "path": "firmware/otadata.bin", "offset": 57344 },
+        { "path": "firmware/firmware_ESP32S3_25343.bin", "offset": 65536 }
+      ]
+    }
   ]
 }
