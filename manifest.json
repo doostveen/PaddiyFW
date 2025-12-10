@@ -1,6 +1,6 @@
 {
   "name": "PadDIY ESP32-S3",
-  "version": "25343",
+  "version": "1.0.0",
   "chipFamily": "ESP32-S3",
   "flashSize": "16MB",
   "parts": [
