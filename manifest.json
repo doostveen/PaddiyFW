@@ -4,9 +4,9 @@
   "build": "2025-12-10",
   "chipFamily": "ESP32",
   "parts": [
-    {
-      "path": "firmware_ESP32S3_25343.bin",
-      "offset": 0x10000 
-    }
+    { "path": "firmware/bootloader.bin", "offset": 0 },
+    { "path": "firmware/partitions.bin", "offset": 32768 },
+    { "path": "firmware/otadata.bin", "offset": 57344 },
+    { "path": "firmware/firmware_ESP32S3_25343.bin", "offset": 65536 }
   ]
 }
