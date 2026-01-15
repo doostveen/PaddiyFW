@@ -1,0 +1,16 @@
+{
+  "name": "PadDIY",
+  "version": "26015",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        { "path": "standard/bootloader.bin", "offset": 0 },
+        { "path": "standard/partitions.bin", "offset": 32768 },
+        { "path": "standard/otadata.bin", "offset": 57344 },
+        { "path": "firmware/firmware_ESP32S3_26015.bin", "offset": 65536 }
+      ]
+    }
+  ]
+}
