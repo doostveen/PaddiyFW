@@ -1,6 +1,9 @@
 # PaddiyFW
 Paddiy firmware updates
 
+# 26043
+Enhancement: always play audio on Companion when connected.
+
 # 26040
 Enhancement: Instant Reset of the Flow Percentage
 
