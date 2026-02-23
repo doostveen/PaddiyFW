@@ -1,6 +1,6 @@
 {
   "name": "PadDIY",
-  "version": "26054",
+  "version": "26043",
   "new_install_prompt_erase": false,
   "builds": [
     {
@@ -9,7 +9,7 @@
         { "path": "standard/bootloader.bin", "offset": 0 },
         { "path": "standard/partitions.bin", "offset": 32768 },
         { "path": "standard/otadata.bin", "offset": 57344 },
-        { "path": "firmware/firmware_ESP32S3_26054.bin", "offset": 65536 }
+        { "path": "firmware/firmware_ESP32S3_26043.bin", "offset": 65536 }
       ]
     }
   ]
