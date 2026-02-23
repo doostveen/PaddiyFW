@@ -1,6 +1,9 @@
 # PaddiyFW
 Paddiy firmware updates
 
+# 26054
+Enhancement: menuitem to turn bluetooth on or off.
+
 # 26043
 Enhancement: always play audio on Companion when connected.
 
