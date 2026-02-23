@@ -1,5 +1,5 @@
 # PaddiyFW
-Paddiy firmware updates
+PadDIY Leak Tester firmware updates.
 
 # 26054
 Enhancement: menuitem to turn bluetooth on or off.
