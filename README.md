@@ -1,6 +1,9 @@
 # PaddiyFW
 PadDIY Leak Tester firmware updates.
 
+# 26141
+Display mac address upon startup in serial console.
+
 # 26054
 Enhancement: menuitem to turn bluetooth on or off.
 
