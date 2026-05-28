@@ -1,6 +1,9 @@
 # PaddiyFW
 PadDIY Leak Tester firmware updates.
 
+# 26148
+Fixes pump not starting due to slow start. Boast PWM.
+
 # 26141
 Display mac address upon startup in serial console.
 
