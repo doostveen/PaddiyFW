@@ -1,6 +1,9 @@
 # PaddiyFW
 PadDIY Leak Tester firmware updates.
 
+# 26168
+[FIX] Fixed that pressure sensors where not detected. It now scans the I2C bus instead of using hardcoded sensor addresses.
+
 # 26148
 Fixes pump not starting due to slow start. Boast PWM.
 
