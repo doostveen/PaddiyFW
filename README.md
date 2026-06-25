@@ -1,24 +1,31 @@
-# PaddiyFW
-PadDIY Leak Tester firmware updates.
+# PadDIY Leak Tester Firmware Updates
 
-# 26168
-[FIX] Fixed that pressure sensors where not detected. It now scans the I2C bus instead of using hardcoded sensor addresses.
+This is the official changelog for the PadDIY Leak Tester firmware.
 
-# 26148
-Fixes pump not starting due to slow start. Boast PWM.
+---
 
-# 26141
-Display mac address upon startup in serial console.
+## 🔧 26176 — Fixes & Improvements
+- **FIX**: The new pressure sensors v3.2 were not detected.
+  The firmware now scans the entire I²C bus instead of using hard‑coded sensor addresses.
 
-# 26054
-Enhancement: menuitem to turn bluetooth on or off.
+---
 
-# 26043
-Enhancement: always play audio on Companion when connected.
+## 🔧 26148 — Stability Improvements
+- **FIX**: Pump sometimes failed to start due to slow PWM ramp‑up.  
+- **ADD**: MAC address is now displayed on startup in the serial console.
 
-# 26040
-Enhancement: Instant Reset of the Flow Percentage
+---
 
-# 26033
-Enhancement: when measuring the rotary button sets the audio threshold precentage.
-Fix: Improved BLE detection. The device name is always prefixed with Paddiy_ and gets a random suffix.
+## 🔧 26054 — Enhancements
+- **ADD**: Menu option to enable or disable Bluetooth.  
+- **ADD**: Companion device always plays audio when connected.  
+- **IMPROVED**: Flow percentage now resets instantly.
+
+---
+
+## 🔧 26034 — Enhancements & Fixes
+- **ADD**: During measurement, the rotary knob now adjusts the audio threshold percentage.  
+- **FIX**: Improved BLE detection.  
+  Device names now always start with `Paddiy_` and include a random suffix.
+
+

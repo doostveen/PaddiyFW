@@ -4,34 +4,120 @@
   <meta charset="UTF-8">
   <title>PadDIY ESP32 Firmware Update</title>
   <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 600px;
+      max-width: 800px;
       margin: 40px auto;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #0073aa;
       text-align: center;
     }
-    h1 {
-      color: #0073aa;
+    select {
+      padding: 8px;
+      font-size: 1em;
+      margin-top: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
     esp-web-install-button {
       --esp-web-button-background: #0073aa;
       --esp-web-button-color: #fff;
       --esp-web-button-border-radius: 6px;
       margin-top: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #changelog {
+      margin-top: 40px;
+      padding: 20px;
+      background: #f7f7f7;
+      border-radius: 8px;
+      text-align: left;
     }
   </style>
 </head>
 <body>
+
   <h1>PadDIY ESP32 Firmware Update</h1>
-  <p>Klik op de knop hieronder om je PadDIY ESP32 te updaten naar de nieuwste firmware.</p>
+  <p style="text-align:center;">Selecteer de firmware die je wilt installeren.</p>
 
-  <esp-web-install-button
-    manifest="https://doostveen.github.io/PaddiyFW/manifest-latest.json">
-  </esp-web-install-button>
+  <select id="firmwareSelect">
+    <option value="">Kies een versie…</option>
+  </select>
 
-  <p style="margin-top:30px; font-size:0.9em; color:#555;">
-    Gebruik Chrome of Edge en sluit je ESP32 via USB aan.
-  </p>
+  <esp-web-install-button id="installBtn"></esp-web-install-button>
+
+  <h2>Changelog</h2>
+  <div id="changelog">Bezig met laden…</div>
+
+  <script>
+    const select = document.getElementById("firmwareSelect");
+    const button = document.getElementById("installBtn");
+
+    function generateManifest(fw) {
+      const base = window.location.origin;
+
+      const manifest = {
+        name: "PadDIY",
+        version: fw.replace("firmware_ESP32S3_", ""),
+        new_install_prompt_erase: false,
+        builds: [
+          {
+            chipFamily: "ESP32-S3",
+            parts: [
+              { path: `${base}/standard/bootloader.bin`, offset: 0 },
+              { path: `${base}/standard/partitions.bin`, offset: 32768 },
+              { path: `${base}/standard/otadata.bin`, offset: 57344 },
+              { path: `${base}/firmware/${fw}.bin`, offset: 65536 }
+            ]
+          }
+        ]
+      };
+
+      const blob = new Blob([JSON.stringify(manifest)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      button.setAttribute("manifest", url);
+    }
+
+    // Firmwarelijst laden
+    fetch("firmware-index.json")
+      .then(r => r.json())
+      .then(data => {
+        const sorted = data.firmware.sort((a, b) => {
+          const na = parseInt(a.split("_").pop());
+          const nb = parseInt(b.split("_").pop());
+          return nb - na;
+        });
+
+        sorted.forEach(name => {
+          const option = document.createElement("option");
+          option.value = name;
+          option.textContent = name.replace("firmware_ESP32S3_", "ESP32‑S3 build ");
+          select.appendChild(option);
+        });
+
+        select.value = sorted[0];
+        generateManifest(sorted[0]);
+      });
+
+    select.addEventListener("change", () => {
+      if (select.value) generateManifest(select.value);
+    });
+
+    // README.md laden en renderen
+    fetch("README.md")
+      .then(r => r.text())
+      .then(md => {
+        document.getElementById("changelog").innerHTML = marked.parse(md);
+      });
+  </script>
+
 </body>
 </html>
