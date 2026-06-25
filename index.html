@@ -44,6 +44,7 @@
   </style>
 </head>
 <body>
+
   <!-- Header -->
   <div style="text-align: center; margin-bottom: 30px;">
     <h1 style="color: #0073aa; font-weight: 600; margin: 0; font-size: 2.2em;">
@@ -82,8 +83,6 @@
     For manuals, troubleshooting, and product information, please visit the official website.
   </p>
 
-</div>
-
   <p/>
   <select id="firmwareSelect">
     <option value="">Select the version…</option>
@@ -95,11 +94,26 @@
   <div id="changelog">Loading…</div>
 
   <script>
+
+    // Detect correct base URL for local + GitHub Pages
+    function getBaseUrl() {
+      const origin = window.location.origin;
+      const path = window.location.pathname;
+
+      // GitHub Pages: /PaddiyFW/
+      if (path.startsWith("/PaddiyFW")) {
+        return origin + "/PaddiyFW";
+      }
+
+      // Local server
+      return origin;
+    }
+
     const select = document.getElementById("firmwareSelect");
     const button = document.getElementById("installBtn");
 
     function generateManifest(fw) {
-      const base = window.location.origin;
+      const base = getBaseUrl();
 
       const manifest = {
         name: "PadDIY",
@@ -123,7 +137,7 @@
       button.setAttribute("manifest", url);
     }
 
-    // Firmwarelijst laden
+    // Load firmware list
     fetch("firmware-index.json")
       .then(r => r.json())
       .then(data => {
@@ -136,7 +150,7 @@
         sorted.forEach(name => {
           const option = document.createElement("option");
           option.value = name;
-          option.textContent = name.replace("firmware_ESP32S3_", "ESP32‑S3 build ");
+          option.textContent = name.replace("firmware_ESP32S3_", "Build ");
           select.appendChild(option);
         });
 
@@ -148,12 +162,13 @@
       if (select.value) generateManifest(select.value);
     });
 
-    // README.md laden en renderen
+    // Load README.md
     fetch("README.md")
       .then(r => r.text())
       .then(md => {
         document.getElementById("changelog").innerHTML = marked.parse(md);
       });
+
   </script>
 
 </body>
