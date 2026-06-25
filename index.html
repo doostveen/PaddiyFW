@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PadDIY ESP32 Firmware Update</title>
+  <title>PadDIY Leak Tester Firmware Update</title>
   <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
@@ -45,17 +45,21 @@
 </head>
 <body>
 
-  <h1>PadDIY ESP32 Firmware Update</h1>
-  <p style="text-align:center;">Selecteer de firmware die je wilt installeren.</p>
+  <h1>PadDIY Leak Tester Firmware Update</h1>
 
+  <p>Please use Google Chrome or Microsoft Edge on your computer. </p>
+  <p>
+  Connect your leak tester via USB, select the version, and click the connect button. Follow the on‑screen instructions until the process is complete.</p>
+  <p/>
+  <p/>
   <select id="firmwareSelect">
-    <option value="">Kies een versie…</option>
+    <option value="">Select the version…</option>
   </select>
 
   <esp-web-install-button id="installBtn"></esp-web-install-button>
 
   <h2>Changelog</h2>
-  <div id="changelog">Bezig met laden…</div>
+  <div id="changelog">Loading…</div>
 
   <script>
     const select = document.getElementById("firmwareSelect");
