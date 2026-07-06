@@ -1,4 +1,4 @@
-## 26176 — Fixes & Improvements
+## 26187 — Fixes & Improvements
 - **FIX**: Support the new v3.2 differential pressure sensors. Sensors are dynamically detected.
 
 ---
