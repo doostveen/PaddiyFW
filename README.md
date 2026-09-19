@@ -1,3 +1,6 @@
+## 26262 - Features
+- Removed Power level from display. Simplify pump adjustment.
+
 ## 26187 — Fixes & Improvements
 - **FIX**: Support the new v3.2 differential pressure sensors. Sensors are dynamically detected.
 
