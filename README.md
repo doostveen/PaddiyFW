@@ -1,5 +1,5 @@
 ## 26262 - Features
-- Removed Power level from display. Simplify pump adjustment.
+- Removed Power level from display to simplify pump adjustments.
 
 ---
 
