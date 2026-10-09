@@ -1,3 +1,8 @@
+## 26282 - Fixes and Improvements
+- Fixes an issue with the pump PWM 
+
+---
+
 ## 26262 - Features
 - Removed Power level from display to simplify pump adjustments.
 
