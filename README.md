@@ -1,3 +1,9 @@
+## 26293
+
+- **FIX**: New audio threshold longer visible when changing
+
+---
+
 ## 26282 - Fixes and Improvements
 - Fixes an issue with the pump PWM 
 
